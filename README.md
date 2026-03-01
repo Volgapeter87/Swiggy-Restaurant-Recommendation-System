@@ -1,5 +1,6 @@
-🍽 Swiggy Restaurant Recommendation System
-📌 Project Overview
+**🍽 Swiggy Restaurant Recommendation System**
+
+**📌 Project Overview**
 
 This project builds a Content-Based Restaurant Recommendation System using restaurant metadata such as:
 
@@ -13,7 +14,8 @@ Rating Count
 
 Cost
 
-The system recommends similar restaurants using:
+
+**The system recommends similar restaurants using:**
 
 ✅ Cosine Similarity (Final Model)
 
@@ -21,7 +23,8 @@ The system recommends similar restaurants using:
 
 The final application is deployed using Streamlit with intelligent filter-aware recommendations.
 
-🎯 Business Objective
+
+**🎯 Business Objective**
 
 To help users discover restaurants similar to their preferences while allowing optional refinement filters for:
 
@@ -33,7 +36,8 @@ Rating
 
 Cost
 
-🛠 Tech Stack
+
+**🛠 Tech Stack**
 
 Python
 
@@ -50,7 +54,9 @@ Streamlit
 Git & GitHub
 
 
-Data Cleaning
+**Work flow:**
+
+Data cleaning
 
 Feature Engineering
 
@@ -64,17 +70,27 @@ Model Comparison
 
 Streamlit Deployment
 
-🧹 Data Preprocessing
+
+
+**🧹 Data Preprocessing**
 
 ✔ Duplicate Removal
+
 ✔ Missing Value Handling
+
 ✔ Rating Conversion to Numeric
+
 ✔ Cost Cleaning (₹ removal and numeric conversion)
+
 ✔ Rating Count Extraction
+
 ✔ One-Hot Encoding (City & Cuisine)
+
 ✔ Sparse Matrix Optimization
 
-🤖 Recommendation Models
+
+**🤖 Recommendation Models**
+
 1️⃣ Cosine Similarity (Final Model)
 
 Computes similarity between selected restaurant and others
@@ -93,15 +109,22 @@ Recommendations generated from same cluster
 
 Used for model comparison
 
-📊 Model Comparison
+
+**📊 Model Comparison**
+
 Metric	Cosine Similarity	K-Means
+
 Average Similarity Score	0.96+	0.98+
+
 Rating Difference (Lower Better)	Lower	Higher
+
 Cost Difference (Lower Better)	Lower	Higher
+
 Execution Time	Faster	Slower
+
 ✅ Final Model Selected: Cosine Similarity
 
-Reason:
+**Reason:**
 
 Better rating consistency
 
@@ -111,7 +134,9 @@ Faster performance
 
 More interpretable similarity results
 
-🧠 Evaluation Strategy
+
+
+**🧠 Evaluation Strategy**
 
 Traditional accuracy does not apply to recommendation systems.
 
@@ -135,7 +160,10 @@ NDCG
 
 can be used.
 
-🖥 Streamlit Application Logic
+
+
+**🖥 Streamlit Application Logic**
+
 Case 1: No Filters Applied
 
 → Pure cosine similarity on full dataset
@@ -145,7 +173,8 @@ Case 2: Filters Applied
 → Dataset restricted based on filters
 → Cosine similarity computed within filtered subset
 
-Available Filters
+
+**Available Filters**
 
 Number of Recommendations (5–30)
 
@@ -165,20 +194,34 @@ Location-aware suggestions
 
 Filter-aware similarity
 
-🚀 How to Run the Project
+
+
+**🚀 How to Run the Project**
+
 1️⃣ Clone Repository
+
 git clone https://github.com/Volgapeter87/Swiggy-Restaurant-Recommendation-System.git
+
 cd Swiggy-Restaurant-Recommendation-System
+
 2️⃣ Create Virtual Environment
+
 python -m venv venv
+
 Activate (Windows):
+
 venv\Scripts\activate
+
 3️⃣ Install Requirements
+
 pip install -r requirements.txt
+
 4️⃣ Run Streamlit App
+
 streamlit run app.py
 
-📌 Key Features
+
+**📌 Key Features**
 
 ✔ Content-Based Recommendation
 
@@ -192,7 +235,9 @@ streamlit run app.py
 
 ✔ Production-Ready Structure
 
-🔮 Future Improvements
+
+
+**🔮 Future Improvements**
 
 Precision@K evaluation
 
@@ -204,7 +249,9 @@ Real-time API integration
 
 Similarity score visualization
 
-📢 Final Note
+
+
+**📢 Final Note**
 
 This project demonstrates:
 
