@@ -49,25 +49,6 @@ Streamlit
 
 Git & GitHub
 
-📂 Project Structure
-swiggy_recommendation/
-│
-├── data/
-│   ├── raw_data.csv
-│   └── cleaned_data.csv
-│
-├── models/
-│   └── encoder.pkl
-│
-├── notebooks/
-│   ├── 01_data_cleaning.ipynb
-│   ├── 02_preprocessing.ipynb
-│   └── 03_model_comparison.ipynb
-│
-├── app.py
-├── requirements.txt
-└── README.md
-🔄 Project Workflow
 
 Data Cleaning
 
@@ -77,7 +58,7 @@ One-Hot Encoding
 
 Sparse Matrix Creation
 
-Model Building (Cosine & KMeans)
+Model Building (Cosine & K-Means)
 
 Model Comparison
 
@@ -86,17 +67,11 @@ Streamlit Deployment
 🧹 Data Preprocessing
 
 ✔ Duplicate Removal
-
 ✔ Missing Value Handling
-
 ✔ Rating Conversion to Numeric
-
 ✔ Cost Cleaning (₹ removal and numeric conversion)
-
 ✔ Rating Count Extraction
-
 ✔ One-Hot Encoding (City & Cuisine)
-
 ✔ Sparse Matrix Optimization
 
 🤖 Recommendation Models
@@ -138,7 +113,7 @@ More interpretable similarity results
 
 🧠 Evaluation Strategy
 
-Traditional “accuracy” does not apply to recommendation systems.
+Traditional accuracy does not apply to recommendation systems.
 
 Instead, evaluation was performed using:
 
@@ -150,7 +125,15 @@ Average Cost Difference
 
 Execution Time Comparison
 
-In production systems, additional metrics like Precision@K, Recall@K, and NDCG can be used.
+In production systems, additional metrics such as:
+
+Precision@K
+
+Recall@K
+
+NDCG
+
+can be used.
 
 🖥 Streamlit Application Logic
 Case 1: No Filters Applied
@@ -188,21 +171,20 @@ git clone https://github.com/Volgapeter87/Swiggy-Restaurant-Recommendation-Syste
 cd Swiggy-Restaurant-Recommendation-System
 2️⃣ Create Virtual Environment
 python -m venv venv
-
 Activate (Windows):
-
 venv\Scripts\activate
 3️⃣ Install Requirements
 pip install -r requirements.txt
 4️⃣ Run Streamlit App
 streamlit run app.py
+
 📌 Key Features
 
 ✔ Content-Based Recommendation
 
 ✔ Memory Efficient Sparse Matrix
 
-✔ Model Comparison (Cosine vs KMeans)
+✔ Model Comparison (Cosine vs K-Means)
 
 ✔ Intelligent Filter-Aware Logic
 
