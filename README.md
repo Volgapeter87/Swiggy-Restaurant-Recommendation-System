@@ -1,101 +1,149 @@
-# 🍽️ Swiggy Restaurant Recommendation System
+🍽 Swiggy Restaurant Recommendation System
+📌 Project Overview
 
-A scalable Restaurant Recommendation System built using Python, Scikit-learn, and Streamlit.  
-This project recommends similar restaurants based on cuisine, rating, cost, and city using Cosine Similarity.
+This project builds a Content-Based Restaurant Recommendation System using restaurant metadata such as:
+City
+Cuisine
+Rating
+Rating Count
+Cost
 
----
+The system recommends similar restaurants using:
+✅ Cosine Similarity (Final Model)
+✅ K-Means Clustering (Compared Model)
+The final solution is deployed using Streamlit with intelligent filter-aware recommendations.
 
-## 📌 Project Overview
+🎯 Business Objective
 
-The objective of this project is to build an intelligent restaurant recommendation system using real-world restaurant data.
+To help users discover restaurants similar to their preferences while allowing optional refinement filters for:
+City
+Cuisine
+Rating
+Cost
 
-The system:
-- Cleans and preprocesses restaurant data
-- Applies One-Hot Encoding on categorical features
-- Uses Cosine Similarity for recommendation
-- Provides an interactive Streamlit dashboard
-- Supports filtering by city, cuisine, rating, and cost
+🛠 Tech Stack
 
-This solution handles large-scale data (148k+ records) using memory-efficient sparse matrix operations.
+Python
+Pandas
+NumPy
+Scikit-Learn
+SciPy
+Streamlit
+Git & GitHub
 
----
+Data Cleaning
+Feature Engineering
+One-Hot Encoding
+Sparse Matrix Creation
+Model Building (Cosine & KMeans)
+Model Comparison
+Streamlit Deployment
 
-## 🚀 Features
+🧹 Data Preprocessing
+✔ Duplicate Removal
+✔ Missing Value Handling
+✔ Rating Conversion to Numeric
+✔ Cost Cleaning (₹ removal, conversion)
+✔ Rating Count Extraction
+✔ One-Hot Encoding (City & Cuisine)
+✔ Sparse Matrix Optimization
 
-- 🔍 City-based restaurant exploration
-- 💖 Similar restaurant recommendation
-- 🎯 Filter by:
-  - Cuisine
-  - Minimum Rating
-  - Maximum Cost
-- 📊 Top-rated restaurant display
-- ⚡ Scalable sparse cosine similarity
-- 🎨 Clean, professional Streamlit UI
-- 🧠 Memory-efficient implementation
+🤖 Recommendation Models
+1️⃣ Cosine Similarity (Final Model)
 
----
+Computes similarity between selected restaurant and others.
+Uses sparse feature matrix.
+Fast and scalable.
+Provides direct similarity scores.
 
-## 🛠️ Tech Stack
+2️⃣ K-Means Clustering (Compared Model)
+Groups restaurants into clusters.
+Recommendations generated from same cluster.
+Slightly higher intra-cluster similarity.
 
-- Python
-- Pandas
-- NumPy
-- Scikit-learn
-- SciPy (Sparse Matrix)
-- Streamlit
-- Git & GitHub
+📊 Model Comparison
+Metric	Cosine Similarity	K-Means
+Average Similarity Score	0.96+	0.98+
+Rating Difference (Lower Better)	Very Low	Higher
+Cost Difference (Lower Better)	Lower	Higher
+Execution Time	Faster	Slower
+✅ Final Model Selected: Cosine Similarity
 
----
+Reason:
+Better rating consistency
+Better cost consistency
+Faster performance
+More interpretable similarity
 
-## 🧠 Recommendation Methodology
+🧠 Evaluation Strategy
 
-### 1️⃣ Data Cleaning
-- Removed duplicates
-- Handled missing values
-- Cleaned rating, cost, and rating_count columns
+Traditional "accuracy" does not apply to recommendation systems.
+Instead, evaluation was done using
+Average Cosine Similarity Score
+Average Rating Difference
+Average Cost Difference
+Execution Time Comparison
 
-### 2️⃣ Feature Engineering
-- One-Hot Encoding for:
-  - City
-  - Cuisine
-- Numerical features:
-  - Rating
-  - Rating Count
-  - Cost
+For production systems, metrics like Precision@K, Recall@K, and NDCG would be used.
 
-### 3️⃣ Sparse Matrix Optimization
-To handle large data (148k+ rows):
-- Used `OneHotEncoder(sparse_output=True)`
-- Combined using `scipy.sparse.hstack`
-- Converted to CSR format
-- Computed cosine similarity on-demand
+🖥 Streamlit Application Logic
+Case 1: No Filters Applied
 
-This avoids creating a massive similarity matrix and keeps memory usage efficient.
+→ Pure cosine similarity on full dataset
 
-### 4️⃣ Recommendation Logic
+Case 2: Filters Applied
 
-If user selects:
-- Only City → Show top-rated restaurants
-- Restaurant → Show similar restaurants within the same city
+→ Dataset restricted based on filters
+→ Cosine similarity computed within filtered subset
 
-Filters are applied after similarity computation.
+Filters Available:
+Number of Recommendations (5–30)
+Minimum Rating
+Maximum Cost
+City
+Cuisine
 
----
+This ensures:
+Intelligent recommendations
+Location-aware suggestions
+Filter-aware similarity
 
-## 📊 Business Use Cases
+🚀 How to Run the Project
+1️⃣ Clone Repository
+git clone https://github.com/Volgapeter87/Swiggy-Restaurant-Recommendation-System.git
+cd Swiggy-Restaurant-Recommendation-System
+2️⃣ Create Virtual Environment
+python -m venv venv
 
-- Personalized restaurant discovery
-- Location-based recommendations
-- Customer decision support
-- Market trend insights
-- Food delivery app enhancement
+Activate:
+venv\Scripts\activate
+3️⃣ Install Requirements
+pip install -r requirements.txt
+4️⃣ Run Streamlit App
+streamlit run app.py
+📌 Key Features
 
----
+✔ Content-Based Recommendation
+✔ Memory Efficient Sparse Matrix
+✔ Model Comparison (Cosine vs KMeans)
+✔ Intelligent Filter-Aware Logic
+✔ GitHub Version Control
+✔ Clean Architecture
+✔ Production-Ready Structure
 
-📈 **Future Improvements**
+🧠 Future Improvements
+Precision@K evaluation
+User interaction tracking
+Hybrid recommendation (Content + Collaborative)
+Model deployment on cloud
+Similarity score visualization
+Real-time API integration
 
--Add search bar with real-time filtering
--Add analytics dashboard (charts & insights)
--Add pagination
--Deploy to Streamlit Cloud
--Add collaborative filtering
+📢 Final Statement
+
+This project demonstrates:
+End-to-end ML workflow
+Feature engineering & encoding
+Clustering & similarity comparison
+Evaluation beyond traditional accuracy
+Real-world deployment using Streamlit.
